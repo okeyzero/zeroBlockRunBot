@@ -1,0 +1,15 @@
+{
+    "RPC": "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+    "privateKey": ["privateKey1", "privateKey2"],
+    "blocknativeKey": "",
+    "barkKey": "",
+    "follow": {
+        "0x5256F6475f0e0BFcf974064947E0eD8AEbd3BeF7": {"all": true, "MethodID":["0xa9059cbb"]}
+    },
+    "txInfo": {
+        "to": "0x5256F6475f0e0BFcf974064947E0eD8AEbd3BeF7",
+        "value": 0,
+        "input": "0x",
+        "gasLimit": 400000
+    }
+}
