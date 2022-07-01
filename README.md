@@ -19,8 +19,6 @@ web3，blocknative-sdk，requests
 
 **barkKey**：IOS的bark软件推送key，用于推送mint成功或者失败信息（没有可以空着）
 
-**maxValue**: 最大金额（设置0就只跟免费的，0.1就表示收费0.1以下的也跟）
-
 **follow**：需要跟踪的项目方（owner 或合约）地址，"follow": {"owner地址":{"all": 是否所有方法都跟, [要跟随的方法]}
 
 **to**：发起交易的to地址
