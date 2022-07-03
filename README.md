@@ -15,7 +15,8 @@ web3，blocknative-sdk，requests
 
 **privateKey**：私钥数组["私钥1", "私钥2"]，有几个号加几个
 
-**blocknativeKey**：https://www.blocknative.com/  创建个账号，个人中心获取，不需要设置，直接复制key即可
+**blocknativeKey**：https://www.blocknative.com/  创建个账号，个人中心获取，不需要设置，直接复制key即可 （需要外网服务器）
+**alchemyKey**：国内可以使用。使用zeroBlockRunBot2.py 文件 (https://www.alchemy.com/ 创建ETH项目，获取，这个也是用于监控，和blocknative二选一，用哪个填哪个，不填置”“)
 
 **barkKey**：IOS的bark软件推送key，用于推送mint成功或者失败信息（没有可以空着）
 
