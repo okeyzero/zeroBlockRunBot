@@ -187,7 +187,7 @@ async def blocknative():
 
 
 async def alchemy():
-    async for websocket in websockets.connect(f'wss://eth-goerli.g.alchemy.com/v2/{alchemyKey}'):
+    async for websocket in websockets.connect(f'wss://eth-mainnet.alchemyapi.io/v2/{alchemyKey}'):
         try:
             json_data = {
                 "jsonrpc": "2.0",
@@ -201,7 +201,7 @@ async def alchemy():
                     print_color(f"监控{_follow}地址成功", 'blue')
             while True:
                 try:
-                    message = await asyncio.wait_for(websocket.recv(), timeout=5*60)
+                    message = await asyncio.wait_for(websocket.recv(), timeout=30*60)
                 except asyncio.TimeoutError:
                     print_color('30分钟无消息，可能断开，尝试重连', 'red')
                     await websocket.close()
