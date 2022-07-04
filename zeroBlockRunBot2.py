@@ -201,17 +201,19 @@ async def alchemy():
                     print_color(f"监控{_follow}地址成功", 'blue')
             while True:
                 try:
-                    message = await asyncio.wait_for(websocket.recv(), timeout=30*60)
+                    message = await asyncio.wait_for(websocket.recv(), timeout=5*60)
                 except asyncio.TimeoutError:
                     print_color('30分钟无消息，可能断开，尝试重连', 'red')
                     await websocket.close()
                     break
+
                 json_data = json.loads(message)
                 if 'params' in json_data:
                     txn = json_data['params']['result']
                     to_address, from_address, inputData, hash, value = txn['to'], txn['from'], txn['input'], txn['hash'], int(txn['value'], 16)
                     if from_address.lower() not in follows:
-                        return
+                        #print_color('似乎是无关的交易 来自 :'+from_address.lower(), 'red')
+                        continue
                     if 'maxFeePerGas' in txn:
                         tx_gasPrice = 0
                         tx_maxFeePerGas, tx_maxPriorityFeePerGas = int(txn['maxFeePerGas'], 16), int(txn['maxPriorityFeePerGas'], 16)
